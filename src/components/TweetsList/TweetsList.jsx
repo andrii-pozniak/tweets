@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import {
   Container,
   BtnLoadMore,
-  BtnBack,
-  Road,
+  BtnBack,  
   Icon,
 } from "./TweetsList.Style";
 import { Card } from "../Card/Card";
@@ -27,11 +27,11 @@ export const TweetsList = ({ tweets }) => {
     <>
       <Container>
         <div>
-          <Road to={"/"}>
+          <Link to={"/"}>
             <BtnBack>
               <Icon /> Back
             </BtnBack>
-          </Road>
+          </Link>
         </div>
 
         <Tweet />
