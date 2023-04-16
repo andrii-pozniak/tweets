@@ -12,7 +12,7 @@ import reportWebVitals from "./reportWebVitals";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename="/tweet">
+    <BrowserRouter basename="/tweets">
       <ThemeProvider theme={theme}>
         <Provider store={store}>
           <App />
