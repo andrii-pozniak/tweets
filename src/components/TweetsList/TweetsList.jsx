@@ -29,7 +29,7 @@ export const TweetsList = ({ tweets }) => {
         <div>
           <Road to={"/"}>
             <BtnBack>
-              <Icon/> Back
+              <Icon /> Back
             </BtnBack>
           </Road>
         </div>
