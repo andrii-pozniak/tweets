@@ -8,7 +8,7 @@ import {
 const URL_NAME = "https://643adcdf90cd4ba56303b907.mockapi.io";
 export const Users = () => {
     const [users, setUsers] =  useState([])
-    console.log('first', users)
+
     useEffect(() => {
         async function fetchUsers() {
             try {
@@ -21,6 +21,7 @@ export const Users = () => {
         }
         fetchUsers()
     }, [])
+    
     return (
         <Section>
             <UserList users={users}/>
