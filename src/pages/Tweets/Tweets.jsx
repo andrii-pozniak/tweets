@@ -6,9 +6,10 @@ import {
  } from "./Tweets.Style";
 
 const URL_NAME = "https://643adcdf90cd4ba56303b907.mockapi.io";
+
 export const Tweets = () => {
     const [tweets, setTweets] =  useState([])
-    // console.log('first', users)
+
     useEffect(() => {
         async function fetchUsers() {
             try {
@@ -21,6 +22,7 @@ export const Tweets = () => {
         }
         fetchUsers()
     }, [])
+    
     return (
         <Section>
             <TweetsList tweets={tweets}/>
