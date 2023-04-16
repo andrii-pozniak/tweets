@@ -53,7 +53,9 @@ export const BtnBack = styled.button`
     transform: scale(1.1);
   }
 `;
-export const Road = styled(Link)``;
+export const Road = styled(Link)`
+text-decoration: none;
+`;
 export const Icon = styled(GrLinkPrevious)`
 margin-right: 8px;
 `;
