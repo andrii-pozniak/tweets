@@ -23,7 +23,6 @@ export const Tweets = () => {
     }, [])
     return (
         <Section>
-
             <TweetsList tweets={tweets}/>
         </Section>
 
