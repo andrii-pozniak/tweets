@@ -1,7 +1,5 @@
 import picture from "../../image/picture2.png";
-// import Photo from "../../image/Hansel.png";
-// import {Form} from "../Form/Form";
-import logo from "../../image/logo.svg"
+import logo from "../../image/logo.svg";
 import {
   Img,
   Line,
@@ -12,7 +10,7 @@ import {
   Btn,
   OwnImg,
   Section,
-    Logo
+  Logo,
 } from "./Card.Style";
 import { useState } from "react";
 
@@ -20,12 +18,14 @@ export const Card = ({ tweets, followers, avatar }) => {
   const [showBtn, setShowBtn] = useState(false);
   const [counts, setCounts] = useState(followers);
 
-  const handleClick = () => {
-   console.log('first', counts )
-    setCounts(counts + 1);
-  };
-  const onHandleClick = () => {
-    setCounts(counts - 1);
+  const handleFollowClick = () => {
+    if (showBtn) {
+      setShowBtn(false);
+      setCounts(followers - 1);
+    } else {
+      setShowBtn(true);
+      setCounts(followers + 1);
+    }
   };
 
   const toggleBtn = () => {
@@ -33,9 +33,8 @@ export const Card = ({ tweets, followers, avatar }) => {
   };
 
   return (
-   
-    <Section >
-       <Logo src={logo} alt=''/>
+    <Section>
+      <Logo src={logo} alt="" />
       <Img src={picture} alt="" />
       <Line />
       <Ring>
@@ -49,9 +48,9 @@ export const Card = ({ tweets, followers, avatar }) => {
           <Btn
             type="button"
             onClick={() => {
-                toggleBtn();
-                handleClick();
-              }}
+              toggleBtn();
+              handleFollowClick();
+            }}
             backgroundColor="#EBD8FF"
             paddingSize="56px"
           >
@@ -61,18 +60,16 @@ export const Card = ({ tweets, followers, avatar }) => {
           <Btn
             type="button"
             onClick={() => {
-                toggleBtn();
-                onHandleClick();
-              }}
+              toggleBtn();
+              handleFollowClick();
+            }}
             backgroundColor="#5CD3A8"
             paddingSize="42px"
           >
             Following
           </Btn>
         )}
-      </ContainerBtn>     
-  </Section>
-      
-   
+      </ContainerBtn>
+    </Section>
   );
 };

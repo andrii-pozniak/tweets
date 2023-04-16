@@ -1,5 +1,11 @@
 import { useState, useEffect } from "react";
-import { Container, BtnLoadMore } from "./TweetsList.Style";
+import {
+  Container,
+  BtnLoadMore,
+  BtnBack,
+  Road,
+  Icon,
+} from "./TweetsList.Style";
 import { Card } from "../Card/Card";
 import { Tweet } from "../Tweet/Tweet";
 
@@ -19,19 +25,30 @@ export const TweetsList = ({ tweets }) => {
 
   return (
     <>
-     <Container>
-      <Tweet />
-      {visibleTweets?.map(({ id, tweets, followers, avatar }) => (
-        <Card key={id} tweets={tweets} followers={followers} avatar={avatar} />
-      ))}
-     
-    </Container>
-     <div>
-     {visibleTweets.length < tweets.length && (
-       <BtnLoadMore onClick={loadMoreTweets}>Load More</BtnLoadMore>
-     )}
-   </div>
+      <Container>
+        <div>
+          <Road to={"/"}>
+            <BtnBack>
+              <Icon/> Back
+            </BtnBack>
+          </Road>
+        </div>
+
+        <Tweet />
+        {visibleTweets?.map(({ id, tweets, followers, avatar }) => (
+          <Card
+            key={id}
+            tweets={tweets}
+            followers={followers}
+            avatar={avatar}
+          />
+        ))}
+      </Container>
+      <div>
+        {visibleTweets.length < tweets.length && (
+          <BtnLoadMore onClick={loadMoreTweets}>Load More</BtnLoadMore>
+        )}
+      </div>
     </>
-   
   );
 };

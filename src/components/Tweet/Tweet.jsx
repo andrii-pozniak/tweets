@@ -14,17 +14,34 @@ import {
   Section,
   Logo,
 } from "../Card/Card.Style";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export const Tweet = () => {
   const [showBtn, setShowBtn] = useState(false);
   const [counts, setCounts] = useState(100500);
 
-  const handleClick = () => {
-    setCounts(counts + 1);
-  };
-  const onHandleClick = () => {
-    setCounts(counts - 1);
+  useEffect(() => {
+    const followingState = localStorage.getItem("following");
+    const followersCount = localStorage.getItem("followers");
+    if (followingState !== null && followersCount !== null) {
+      setShowBtn(JSON.parse(followingState));
+      setCounts(parseInt(followersCount));
+    }
+  }, []);
+  
+
+  const handleFollowClick = () => {
+    if (showBtn) {
+      setShowBtn(false);
+      setCounts(counts - 1);
+       localStorage.setItem("following", false);
+       localStorage.setItem("followers", counts - 1);
+    } else {
+      setShowBtn(true);
+      setCounts(counts + 1);
+       localStorage.setItem("following", true);
+       localStorage.setItem("followers", counts + 1);
+    }
   };
 
   const toggleBtn = () => {
@@ -49,7 +66,7 @@ export const Tweet = () => {
               type="button"
               onClick={() => {
                 toggleBtn();
-                handleClick();
+                handleFollowClick();
               }}
               backgroundColor="#EBD8FF"
               paddingSize="56px"
@@ -61,7 +78,7 @@ export const Tweet = () => {
               type="button"
               onClick={() => {
                 toggleBtn();
-                onHandleClick();
+                handleFollowClick();
               }}
               backgroundColor="#5CD3A8"
               paddingSize="42px"

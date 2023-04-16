@@ -18,6 +18,8 @@ export const Link = styled(NavLink)`
   text-decoration: none;
   color: ${(p) => p.theme.colors.btn};
   font-weight: ${(p) => p.theme.fontWeights.middle};
+  box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s;
   :not(:last-child) {
     margin-right: ${(p) => p.theme.space[4]}px;
   }
@@ -25,8 +27,14 @@ export const Link = styled(NavLink)`
   :focus:not(.active) {
     color: ${(p) => p.theme.colors.white};
     background-color: ${(p) => p.theme.colors.secondary};
+   
+  };
+  :hover {
+    transform: scale(1.1);
   };
   &.active {
     color: ${p => p.theme.colors.white};
     background-color: ${p => p.theme.colors.secondary};
+
+  }
 `;
