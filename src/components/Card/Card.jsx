@@ -23,13 +23,11 @@ export const Card = ({ tweets, followers, avatar }) => {
   const handleClick = () => {
    console.log('first', counts )
     setCounts(counts + 1);
-// console.log('counts', t )
   };
   const onHandleClick = () => {
     setCounts(counts - 1);
   };
 
-    // console.log('first', {avatar})
   const toggleBtn = () => {
     setShowBtn(!showBtn);
   };
