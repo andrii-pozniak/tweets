@@ -47,6 +47,7 @@ export const BtnBack = styled.button`
   font-size: ${(p) => p.theme.fontSizes.s};
   color: ${(p) => p.theme.colors.btn};
   border: none;
+  z-index: 100;
   transition: transform 0.3s;
   cursor: pointer;
   &:hover {
