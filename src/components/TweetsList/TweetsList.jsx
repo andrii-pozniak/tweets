@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 // import { Link } from "react-router-dom";
-import { Container, BtnLoadMore, BtnBack, Icon } from "./TweetsList.Style";
+import { Container, BtnLoadMore, BtnBack } from "./TweetsList.Style";
 import { Card } from "../Card/Card";
 import { Tweet } from "../Tweet/Tweet";
 
@@ -43,7 +43,7 @@ export const TweetsList = ({ tweets }) => {
       </div>
      
             <BtnBack onClick={handleBackClick}>
-              <Icon /> Back
+               Back
             </BtnBack>
           
     </>
