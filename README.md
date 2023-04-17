@@ -13,7 +13,7 @@ React
 </a>
 
  <a href="https://redux.js.org/">
-        <img src="public/readme/redux.png" alt="Logo" width="15" height="15" > 
+       ![React Logo](./images/react.png "React Logo")
   Axios
 </a>
 
