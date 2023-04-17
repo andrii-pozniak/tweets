@@ -27,6 +27,6 @@ This project is a tool for collecting tweets from the Twitter API and analyzing 
    ```
 ## Contact Me
 
-Project Link: [https://github.com/andrii-pozniak/tweets](https://github.com/andrii-pozniak/tweets)
+Project Link: [https://andrii-pozniak.github.io/tweets/](https://andrii-pozniak.github.io/tweets/)
 
 Developer - [LinkedIn](https://www.linkedin.com/in/andrii-pozniak-69aa31222/)
