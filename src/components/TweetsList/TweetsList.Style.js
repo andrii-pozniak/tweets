@@ -30,9 +30,9 @@ export const BtnLoadMore = styled.button`
   }
 `;
 export const BtnBack = styled.button`
-  position: absolute;
+  /* position: absolute;
   top: 8px;
-  right: 40px;
+  right: 40px; */
   display: flex;
   margin-top: 26px;
   padding: 5px 10px;
