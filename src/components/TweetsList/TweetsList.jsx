@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { Container, BtnLoadMore, BtnBack, Icon } from "./TweetsList.Style";
 import { Card } from "../Card/Card";
 import { Tweet } from "../Tweet/Tweet";
@@ -12,6 +12,10 @@ export const TweetsList = ({ tweets }) => {
       ...visibleTweets,
       ...tweets.slice(visibleTweets.length, visibleTweets.length + 4),
     ]);
+  };
+
+  const handleBackClick = () => {
+    window.history.back();
   };
 
   useEffect(() => {
@@ -37,11 +41,11 @@ export const TweetsList = ({ tweets }) => {
           <BtnLoadMore onClick={loadMoreTweets}>Load More</BtnLoadMore>
         )}
       </div>
-      <Link to="#" onClick={() => window.history.back()}>
-            <BtnBack>
+     
+            <BtnBack onClick={handleBackClick}>
               <Icon /> Back
             </BtnBack>
-          </Link>
+          
     </>
   );
 };
