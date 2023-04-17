@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { Container, BtnLoadMore, BtnBack, Icon } from "./TweetsList.Style";
 import { Card } from "../Card/Card";
 import { Tweet } from "../Tweet/Tweet";
@@ -28,7 +28,7 @@ export const TweetsList = ({ tweets }) => {
             </BtnBack>
           </Link>
         </div>
-
+        <Outlet/>
         <Tweet />
         {visibleTweets?.map(({ id, tweets, followers, avatar }) => (
           <Card
