@@ -1,5 +1,3 @@
-
-
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { Layout } from "../src/pages/Layout";
@@ -11,8 +9,8 @@ export const App = () => {
     <div>
       <Routes>
         <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path="/tweets" element={<Tweets />} />
+          <Route index element={<Home />} />
+          <Route path="/tweets" element={<Tweets />} />
         </Route>
       </Routes>
     </div>

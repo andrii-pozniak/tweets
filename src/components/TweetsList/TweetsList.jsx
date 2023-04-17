@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-// import { Link } from "react-router-dom";
-import { Container, BtnLoadMore, BtnBack } from "./TweetsList.Style";
+import { Container, BtnLoadMore, BtnBack, Icon } from "./TweetsList.Style";
 import { Card } from "../Card/Card";
 import { Tweet } from "../Tweet/Tweet";
 
@@ -25,7 +24,9 @@ export const TweetsList = ({ tweets }) => {
   return (
     <>
       <Container>
-       
+        <BtnBack onClick={handleBackClick}>
+          <Icon /> Back
+        </BtnBack>
         <Tweet />
         {visibleTweets?.map(({ id, tweets, followers, avatar }) => (
           <Card
@@ -41,11 +42,6 @@ export const TweetsList = ({ tweets }) => {
           <BtnLoadMore onClick={loadMoreTweets}>Load More</BtnLoadMore>
         )}
       </div>
-     
-            <BtnBack onClick={handleBackClick}>
-               Back
-            </BtnBack>
-          
     </>
   );
 };

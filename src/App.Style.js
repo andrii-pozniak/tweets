@@ -20,4 +20,3 @@ export const Logo = styled.img`
   top: 20px;
   left: 20px;
 `;
-
