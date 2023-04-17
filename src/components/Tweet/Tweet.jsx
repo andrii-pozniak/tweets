@@ -28,19 +28,18 @@ export const Tweet = () => {
       setCounts(parseInt(followersCount));
     }
   }, []);
-  
 
   const handleFollowClick = () => {
     if (showBtn) {
       setShowBtn(false);
       setCounts(counts - 1);
-       localStorage.setItem("following", false);
-       localStorage.setItem("followers", counts - 1);
+      localStorage.setItem("following", false);
+      localStorage.setItem("followers", counts - 1);
     } else {
       setShowBtn(true);
       setCounts(counts + 1);
-       localStorage.setItem("following", true);
-       localStorage.setItem("followers", counts + 1);
+      localStorage.setItem("following", true);
+      localStorage.setItem("followers", counts + 1);
     }
   };
 

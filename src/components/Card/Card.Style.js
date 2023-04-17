@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Section = styled.div`
- position: relative;  
+  position: relative;
   width: 380px;
   background: linear-gradient(
     114.99deg,
@@ -18,7 +18,6 @@ export const Logo = styled.img`
   left: 20px;
 `;
 export const Line = styled.div`
- 
   margin-top: ${(p) => p.theme.space[4]}px;
   height: ${(p) => p.theme.space[3]}px;
   width: 100%;
@@ -27,13 +26,18 @@ export const Line = styled.div`
     inset 0px -1.71846px 3.43693px #ae7be3, inset 0px 3.43693px 2.5777px #fbf8ff;
 `;
 
-export const Ring = styled.div` 
+export const Ring = styled.div`
   margin-left: auto;
   margin-right: auto;
   margin-top: -55px;
   height: ${(p) => p.theme.space[7]}px;
   width: ${(p) => p.theme.space[7]}px;
-  background: linear-gradient(114.99deg, #471CA9 -0.99%, #5736A3 54.28%, #4B2A99 78.99%);
+  background: linear-gradient(
+    114.99deg,
+    #471ca9 -0.99%,
+    #5736a3 54.28%,
+    #4b2a99 78.99%
+  );
   border-radius: ${(p) => p.theme.radii.round};
   border: ${(p) => p.theme.space[3]}px solid ${(p) => p.theme.colors.line};
   border-color: ${(p) => p.theme.colors.line};
@@ -45,7 +49,6 @@ export const Img = styled.img`
   padding-top: ${(p) => p.theme.space[4]}px;
   padding-left: ${(p) => p.theme.space[6]}px;
   padding-right: ${(p) => p.theme.space[6]}px;
- 
 `;
 export const ContainerBtn = styled.div`
   margin-top: 26px;
@@ -66,9 +69,9 @@ export const Text = styled.p`
   font-size: ${(p) => p.theme.fontSizes.mx};
   line-height: ${(p) => p.theme.lineHeights.heading};
   color: ${(p) => p.theme.colors.text};
-  
 `;
-export const TextCount = styled.p`  margin: 0;
+export const TextCount = styled.p`
+  margin: 0;
   margin-bottom: 26px;
   margin-left: auto;
   margin-right: auto;
@@ -77,11 +80,11 @@ export const TextCount = styled.p`  margin: 0;
   font-weight: ${(p) => p.theme.fontWeights.middle};
   font-size: ${(p) => p.theme.fontSizes.mx};
   line-height: ${(p) => p.theme.lineHeights.heading};
-  color: ${(p) => p.theme.colors.text};  
+  color: ${(p) => p.theme.colors.text};
 `;
 export const Btn = styled.div`
-  display: inline-block; 
-  padding: 14px ${(p) => p.paddingSize};  
+  display: inline-block;
+  padding: 14px ${(p) => p.paddingSize};
   background-color: ${(p) => p.backgroundColor};
   border-radius: ${(p) => p.theme.radii.normal};
   box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
@@ -95,13 +98,11 @@ export const Btn = styled.div`
   &:hover {
     transform: scale(1.1);
   }
-  
 `;
 export const OwnImg = styled.img`
-    width: 100%;
-    height: 100%;
-    object-position: 50% 50%;
-    object-fit: cover;
-    border-radius: 50%;
-
+  width: 100%;
+  height: 100%;
+  object-position: 50% 50%;
+  object-fit: cover;
+  border-radius: 50%;
 `;

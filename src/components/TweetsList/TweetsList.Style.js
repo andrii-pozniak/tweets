@@ -1,10 +1,9 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 import { GrLinkPrevious } from "react-icons/gr"
 
 export const Container = styled.div`
   display: flex;
-  gap: 10px;
+  gap: 16px;
   flex-wrap: wrap;
   justify-content: center;
 `;
@@ -30,9 +29,9 @@ export const BtnLoadMore = styled.button`
   }
 `;
 export const BtnBack = styled.button`
-  /* position: absolute;
+  position: absolute;
   top: 8px;
-  right: 40px; */
+  right: 40px;
   display: flex;
   margin-top: 26px;
   padding: 5px 10px;
@@ -47,16 +46,14 @@ export const BtnBack = styled.button`
   font-size: ${(p) => p.theme.fontSizes.s};
   color: ${(p) => p.theme.colors.btn};
   border: none;
-  z-index: 100;
+  z-index: 500;
   transition: transform 0.3s;
   cursor: pointer;
   &:hover {
     transform: scale(1.1);
   }
 `;
-export const Road = styled(Link)`
-text-decoration: none;
-`;
+
 export const Icon = styled(GrLinkPrevious)`
 margin-right: 8px;
 `;

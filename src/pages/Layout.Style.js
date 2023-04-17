@@ -27,14 +27,12 @@ export const Link = styled(NavLink)`
   :focus:not(.active) {
     color: ${(p) => p.theme.colors.white};
     background-color: ${(p) => p.theme.colors.secondary};
-   
-  };
+  }
   :hover {
     transform: scale(1.1);
-  };
+  }
   &.active {
-    color: ${p => p.theme.colors.white};
-    background-color: ${p => p.theme.colors.secondary};
-
+    color: ${(p) => p.theme.colors.white};
+    background-color: ${(p) => p.theme.colors.secondary};
   }
 `;
