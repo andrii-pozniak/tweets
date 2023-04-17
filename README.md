@@ -25,3 +25,8 @@ This project is a tool for collecting tweets from the Twitter API and analyzing 
    ```sh
    npm start
    ```
+## Contact Us
+
+Project Link: [https://github.com/andrii-pozniak/tweets](https://github.com/andrii-pozniak/tweets)
+
+Developer - [LinkedIn](https://www.linkedin.com/in/andrii-pozniak-69aa31222/)
