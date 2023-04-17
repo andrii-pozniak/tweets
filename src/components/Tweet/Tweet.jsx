@@ -59,7 +59,7 @@ export const Tweet = () => {
         <ContainerBtn>
           {/* <Form/> */}
           <Text> 777 TWEETS</Text>
-          <TextCount>{counts} FOLLOWERS</TextCount>
+          <TextCount>{counts.toLocaleString()} FOLLOWERS</TextCount>
           {!showBtn ? (
             <Btn
               type="button"
