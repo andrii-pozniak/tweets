@@ -14,31 +14,26 @@ import {
 } from "./Card.Style";
 import { useState } from "react";
 
-export const Card = ({ tweets, followers, avatar }) => {
+export const Card = ({ tweets, id, followers, avatar, onFollowClick }) => {
   const [showBtn, setShowBtn] = useState(false);
   const [counts, setCounts] = useState(followers);
 
-  const handleFollowClick = () => {
-    if (showBtn) {
-      setShowBtn(false);
-      setCounts(followers - 1);
-    } else {
-      setShowBtn(true);
-      setCounts(followers + 1);
-    }
-  };
-
   const toggleBtn = () => {
     setShowBtn(!showBtn);
+    if (showBtn) {
+      setCounts(counts - 1);
+    } else {
+      setCounts(counts + 1);
+    }
   };
 
   return (
     <Section>
-      <Logo src={logo} alt="" />
-      <Img src={picture} alt="" />
+      <Logo src={logo} alt="logo" />
+      <Img src={picture} alt="picture" />
       <Line />
       <Ring>
-        <OwnImg src={avatar} alt="" />
+        <OwnImg src={avatar} alt="avatar" />
       </Ring>
       <ContainerBtn>
         {/* <Form/> */}
@@ -49,7 +44,7 @@ export const Card = ({ tweets, followers, avatar }) => {
             type="button"
             onClick={() => {
               toggleBtn();
-              handleFollowClick();
+              onFollowClick({ follow: "following" }, id);
             }}
             backgroundColor="#EBD8FF"
             paddingSize="56px"
@@ -61,7 +56,7 @@ export const Card = ({ tweets, followers, avatar }) => {
             type="button"
             onClick={() => {
               toggleBtn();
-              handleFollowClick();
+              onFollowClick({ follow: "follow" }, id);
             }}
             backgroundColor="#5CD3A8"
             paddingSize="42px"
