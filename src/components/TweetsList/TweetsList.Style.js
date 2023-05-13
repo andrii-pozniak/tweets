@@ -68,18 +68,16 @@ export const DropdownMenu =styled.div`
     top: 20px;
     left: 0;
     padding: 5px;
-    /* width: 100%; */
     background-color: #f8f8f8;
     border: 1px solid #ccc;
     border-top: none;
     z-index: 1;
-    /* display: none; */
   `;
 
 export const BtnMenu = styled.button`
   display: flex;
-  margin-top: 26px;
-  padding: 14px ${(p) => p.paddingSize};
+  margin-bottom: 12px;
+  padding: 8px ${(p) => p.paddingSize};
   margin-left: auto;
   margin-right: auto;
   background-color: ${(p) => p.theme.colors.text};

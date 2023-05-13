@@ -32,16 +32,17 @@ console.log('first', visibleTweets)
     ]);
   };
 
-  const handleBackClick = () => {
+  const onBackClick = () => {
     window.history.back();
   };
   
-  const handleFilterChange = (option) => {
+  const onFilterChange = (option) => {
     setFilterOption(option);
+     setMenuVisible(!menuVisible);
     
   };  
   
-  const handleMenuClick  = () => {
+  const onMenuClick  = () => {
     setMenuVisible(!menuVisible);
     
   };
@@ -65,7 +66,7 @@ console.log('first', visibleTweets)
   };
  
   const filteredTweets = visibleTweets.filter(tweet => {
-    if (filterOption === 'all') {
+    if (filterOption === 'show all') {
       return true;
     } else if (filterOption === 'following') {
       return tweet.follow === 'following';
@@ -77,15 +78,15 @@ console.log('first', visibleTweets)
   return (
     <>
       <Dropdown >
-      <BtnMenu onClick={handleMenuClick}>{filterOption}</BtnMenu>
+      <BtnMenu onClick={onMenuClick}>{filterOption}</BtnMenu>
       {menuVisible && (<DropdownMenu >
-        <BtnMenu onClick={() => handleFilterChange('all')}>show all</BtnMenu>
-        <BtnMenu onClick={() => handleFilterChange('follow')}>follow</BtnMenu>
-        <BtnMenu onClick={() => handleFilterChange('following')}>followings</BtnMenu>
+        <BtnMenu onClick={() => onFilterChange('show all')}>show all</BtnMenu>
+        <BtnMenu onClick={() => onFilterChange('follow')}>follow</BtnMenu>
+        <BtnMenu onClick={() => onFilterChange('following')}>followings</BtnMenu>
       </DropdownMenu>)}
     </Dropdown>
       <Container>     
-        <BtnBack onClick={handleBackClick}>
+        <BtnBack onClick={onBackClick}>
           <Icon /> Back
         </BtnBack>
         <Tweet />
