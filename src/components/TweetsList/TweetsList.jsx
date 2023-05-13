@@ -9,13 +9,26 @@ import { Container,
      } from "./TweetsList.Style";
 import { Card } from "../Card/Card";
 import { Tweet } from "../Tweet/Tweet";
+import  {fetchTweets}  from "../../api/getTweets";
 
-export const TweetsList = ({ tweets }) => {
+export const TweetsList = () => {
   const [visibleTweets, setVisibleTweets] = useState([]);
-  // const [visible, setVisible] = useState([]);
   const [filterOption, setFilterOption] = useState('show all');
   const [menuVisible, setMenuVisible] = useState(false);
+  const [tweets, setTweets] = useState([]);
+
+useEffect(() => (
+  async() => {
+    try {
+    const data = await fetchTweets();
   
+      setTweets(data);
+console.log("first", data)
+    } catch (error) {
+      
+    }
+  }) , [])
+    
   useEffect(() => {
     const tweetsWithFollow = tweets.slice(0, 11).map(tweet => ({
       ...tweet,
@@ -23,7 +36,7 @@ export const TweetsList = ({ tweets }) => {
     }));
     setVisibleTweets(tweetsWithFollow);
   }, [tweets]);
-console.log('first', visibleTweets)
+
 
   const loadMoreTweets = () => {
     setVisibleTweets([
